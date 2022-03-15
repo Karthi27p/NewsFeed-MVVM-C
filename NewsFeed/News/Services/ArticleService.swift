@@ -26,7 +26,7 @@ struct ArticleService {
     }
     
     func getArticles() -> AnyPublisher<NewsArticles, Error> {
-        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v2/everything?q=tesla&from=2022-02-08&sortBy=publishedAt&apiKey=\(apiKey)")!)
+        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v2/everything?q=tesla&from=2022-03-15&sortBy=publishedAt&apiKey=\(apiKey)")!)
         return APIManager.callApi(requestUrl: urlRequest, resultStruct: NewsArticles.self)
     }
 }
