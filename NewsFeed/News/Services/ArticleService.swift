@@ -10,7 +10,14 @@ import Combine
 
 struct ArticleService {
     
-    private var apiKey: String {
+    func getArticles() -> AnyPublisher<NewsArticles, Error> {
+        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v2/everything?q=tesla&from=2022-03-15&sortBy=publishedAt&apiKey=\(PlistManager.apiKey)")!)
+        return APIManager.callApi(requestUrl: urlRequest, resultStruct: NewsArticles.self)
+    }
+}
+
+struct PlistManager {
+     static var apiKey: String {
         get {
             guard let filePath = Bundle.main.path(forResource: "APIKey", ofType: "plist") else {
                 fatalError("API KEY path not configured")
@@ -23,10 +30,5 @@ struct ArticleService {
             }
             return value
         }
-    }
-    
-    func getArticles() -> AnyPublisher<NewsArticles, Error> {
-        let urlRequest = URLRequest(url: URL(string: "https://newsapi.org/v2/everything?q=tesla&from=2022-03-15&sortBy=publishedAt&apiKey=\(apiKey)")!)
-        return APIManager.callApi(requestUrl: urlRequest, resultStruct: NewsArticles.self)
     }
 }

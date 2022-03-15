@@ -21,6 +21,9 @@
 		6565D72327E10D5C0047E843 /* ImageOverlayContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6565D72227E10D5C0047E843 /* ImageOverlayContentView.swift */; };
 		6565D72527E10D7F0047E843 /* MultiColorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6565D72427E10D7F0047E843 /* MultiColorText.swift */; };
 		6565D72727E10DB00047E843 /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6565D72627E10DB00047E843 /* CachedAsyncImage.swift */; };
+		6565D72A27E1176D0047E843 /* BuisnessHeadlinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6565D72927E1176D0047E843 /* BuisnessHeadlinesViewController.swift */; };
+		6565D72E27E11B580047E843 /* BuisnessHeadlinesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6565D72D27E11B580047E843 /* BuisnessHeadlinesCoordinator.swift */; };
+		6565D73027E11C340047E843 /* BuisnessHeadlinesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6565D72F27E11C340047E843 /* BuisnessHeadlinesContentView.swift */; };
 		659373DD27AA459F00A34457 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659373DC27AA459F00A34457 /* AppDelegate.swift */; };
 		659373DF27AA459F00A34457 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659373DE27AA459F00A34457 /* SceneDelegate.swift */; };
 		659373E127AA459F00A34457 /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659373E027AA459F00A34457 /* NewsFeedViewController.swift */; };
@@ -90,6 +93,9 @@
 		6565D72227E10D5C0047E843 /* ImageOverlayContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOverlayContentView.swift; sourceTree = "<group>"; };
 		6565D72427E10D7F0047E843 /* MultiColorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiColorText.swift; sourceTree = "<group>"; };
 		6565D72627E10DB00047E843 /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
+		6565D72927E1176D0047E843 /* BuisnessHeadlinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuisnessHeadlinesViewController.swift; sourceTree = "<group>"; };
+		6565D72D27E11B580047E843 /* BuisnessHeadlinesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuisnessHeadlinesCoordinator.swift; sourceTree = "<group>"; };
+		6565D72F27E11C340047E843 /* BuisnessHeadlinesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuisnessHeadlinesContentView.swift; sourceTree = "<group>"; };
 		659373D927AA459F00A34457 /* NewsFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		659373DC27AA459F00A34457 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		659373DE27AA459F00A34457 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +193,32 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		6565D72827E1174D0047E843 /* Buisness Headlines */ = {
+			isa = PBXGroup;
+			children = (
+				6565D72C27E11B2C0047E843 /* Coordinator */,
+				6565D72B27E117750047E843 /* View */,
+			);
+			path = "Buisness Headlines";
+			sourceTree = "<group>";
+		};
+		6565D72B27E117750047E843 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6565D72927E1176D0047E843 /* BuisnessHeadlinesViewController.swift */,
+				6565D72F27E11C340047E843 /* BuisnessHeadlinesContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6565D72C27E11B2C0047E843 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6565D72D27E11B580047E843 /* BuisnessHeadlinesCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		659373D027AA459F00A34457 = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +244,7 @@
 		659373DB27AA459F00A34457 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				6565D72827E1174D0047E843 /* Buisness Headlines */,
 				65F7F9A827BAD10A0042136D /* Tab Bar */,
 				65B4A43527B82B870018AD45 /* Top Headlines */,
 				65C9FCE227B239FD002769F8 /* News */,
@@ -480,9 +513,11 @@
 				65F7F99C27BA48C80042136D /* ImageLoader.swift in Sources */,
 				65F7F9A627BACD950042136D /* TopHeadlinesCoordinator.swift in Sources */,
 				65BC3F8727B3EA8B004F9C82 /* NewsArticles.swift in Sources */,
+				6565D73027E11C340047E843 /* BuisnessHeadlinesContentView.swift in Sources */,
 				6565D72127E10D3F0047E843 /* ArticleDetailContentView.swift in Sources */,
 				65F7F9A327BACD4D0042136D /* TabBarCoordinator.swift in Sources */,
 				659373E127AA459F00A34457 /* NewsFeedViewController.swift in Sources */,
+				6565D72A27E1176D0047E843 /* BuisnessHeadlinesViewController.swift in Sources */,
 				6565D72727E10DB00047E843 /* CachedAsyncImage.swift in Sources */,
 				655A29B027ADFB5900ABF2D4 /* ArticleService.swift in Sources */,
 				65C9FCE827B27894002769F8 /* NewsCollectionViewCell.swift in Sources */,
@@ -490,6 +525,7 @@
 				659373DD27AA459F00A34457 /* AppDelegate.swift in Sources */,
 				659373DF27AA459F00A34457 /* SceneDelegate.swift in Sources */,
 				655A29B327ADFEA900ABF2D4 /* ArticleViewModel.swift in Sources */,
+				6565D72E27E11B580047E843 /* BuisnessHeadlinesCoordinator.swift in Sources */,
 				6565D72327E10D5C0047E843 /* ImageOverlayContentView.swift in Sources */,
 				65374CF627B1A61900A7ED0C /* AppCoordinator.swift in Sources */,
 				655A29AD27ADFA3E00ABF2D4 /* Article.swift in Sources */,
@@ -677,7 +713,7 @@
 					"$(PROJECT_DIR)/NewsFeed/Cache",
 				);
 				INFOPLIST_FILE = NewsFeed/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -701,7 +737,7 @@
 					"$(PROJECT_DIR)/NewsFeed/Cache",
 				);
 				INFOPLIST_FILE = NewsFeed/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

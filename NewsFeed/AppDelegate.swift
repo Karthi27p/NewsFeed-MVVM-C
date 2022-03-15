@@ -5,6 +5,7 @@
 //  Created by karthi.palaniappan on 02/02/22.
 //
 
+//TODO: Code cleanup and pragma marks to be handled
 import UIKit
 
 @main

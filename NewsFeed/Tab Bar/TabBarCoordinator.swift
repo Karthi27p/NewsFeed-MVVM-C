@@ -23,10 +23,11 @@ class TabBarCoordinator: BaseCoordinator {
     override func start() {
         let newsFeedCoordinator = getNewsFeedCoordinator()
         let topHeadlinesCoordinator = getTopHeadlinesCoordinator()
-        tabBarController.setViewControllers([topHeadlinesCoordinator.navigationController, newsFeedCoordinator.navigationController], animated: false)
+        let buisnessHeadlinesCoordinator = getBuisnessHeadlinesCoordinator()
+        tabBarController.setViewControllers([topHeadlinesCoordinator.navigationController, newsFeedCoordinator.navigationController, buisnessHeadlinesCoordinator.navigationController], animated: false)
         self.addChildCoordinator(topHeadlinesCoordinator)
         self.addChildCoordinator(newsFeedCoordinator)
-        tabBarController.setTitle(tabBarItemTitles: [("Top Headlines", "News"), ("News", "Tesla")])
+        tabBarController.setTitle(tabBarItemTitles: [("Top Headlines", "News"), ("News", "Tesla"), ("Buisness Headlines", "Buisness")])
         window.rootViewController = tabBarController
         window.makeKeyAndVisible()
     }
@@ -41,6 +42,12 @@ class TabBarCoordinator: BaseCoordinator {
         let topHeadlinesCoordinator = TopHeadlinesCoordinator(navigationController: UINavigationController())
         topHeadlinesCoordinator.start()
         return topHeadlinesCoordinator
+    }
+    
+    func getBuisnessHeadlinesCoordinator() -> BuisnessHeadlinesCoordinator {
+        let buisnessHeadlinesCoordinator = BuisnessHeadlinesCoordinator(navigationController: UINavigationController())
+        buisnessHeadlinesCoordinator.start()
+        return buisnessHeadlinesCoordinator
     }
 }
 

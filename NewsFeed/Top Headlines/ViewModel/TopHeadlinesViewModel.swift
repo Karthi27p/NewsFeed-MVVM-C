@@ -1,5 +1,5 @@
 //
-//  TopHeadlinesViewModel.swift
+//  HeadlinesViewModel.swift
 //  NewsFeed
 //
 //  Created by karthi.palaniappan on 15/03/22.
@@ -10,16 +10,16 @@ import Combine
 import SwiftUI
 
 enum ApiType: String {
-    case techCrunch = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=7f286201a8c84bf2a9f2ad03ce11866a"
-    case buisnessHeadlines = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=7f286201a8c84bf2a9f2ad03ce11866a"
+    case techCrunch = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey="
+    case buisnessHeadlines = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey="
 }
 
-class TopHeadlinesViewModel: ObservableObject {
+class HeadlinesViewModel: ObservableObject {
     @Published var articles = [Article]()
     var selectedArticle: Article?
     
     @available(iOS 15.0, *) func loadData(apiType: ApiType) async -> Void {
-        let url = URL(string: apiType.rawValue)
+        let url = URL(string: apiType.rawValue+PlistManager.apiKey)
         let result = await APIService.callApi(url: url!, resultStruct: NewsArticles.self)
         switch result {
         case .success(let newsArticles):

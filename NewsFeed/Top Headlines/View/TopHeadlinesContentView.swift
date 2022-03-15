@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TopHeadlinesContentView: View {
     
-    @StateObject var articleModel = TopHeadlinesViewModel()
+    @StateObject var articleModel = HeadlinesViewModel()
     @State var showImage = false
     @Uppercased var titleText = "welcome & enjoy reading"
     
