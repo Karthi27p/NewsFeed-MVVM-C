@@ -66,7 +66,7 @@ struct TopHeadlinesContentView: View {
                                 await articleModel.loadData(apiType: .techCrunch)
                             }
                         }
-                    }
+                    }.navigationViewStyle(StackNavigationViewStyle())
                 }
                 if showImage {
                     ImageOverlayContentView(showImage: $showImage, image: ImageCache[URL(string: (articleModel.selectedArticle?.urlToImage) ?? "")!] ?? Image(uiImage: UIImage(named: "PlaceholderImage")!))

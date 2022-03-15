@@ -50,7 +50,7 @@ struct BuisnessHeadlinesContentView: View {
                 }.dynamicTypeSize(.xSmall...(.large))
                     .navigationTitle("Buisness Headlines")
             }
-        }.dynamicTypeSize(.xSmall...(.xLarge))
+        }.dynamicTypeSize(.xSmall...(.xLarge)).navigationViewStyle(StackNavigationViewStyle())
     }
     
     var searchResult: [String] {
