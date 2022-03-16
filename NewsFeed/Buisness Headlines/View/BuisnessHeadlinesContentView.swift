@@ -49,6 +49,9 @@ struct BuisnessHeadlinesContentView: View {
                     
                 }.dynamicTypeSize(.xSmall...(.large))
                     .navigationTitle("Buisness Headlines")
+                NavigationLink(destination: BuisnessDetailContentView(buisnessViewModel: buisnessArticle), label: {
+                    Text("View articles in detail").frame(height: 20, alignment: .center).padding(5)
+                })
             }
         }.dynamicTypeSize(.xSmall...(.xLarge)).navigationViewStyle(StackNavigationViewStyle())
     }
