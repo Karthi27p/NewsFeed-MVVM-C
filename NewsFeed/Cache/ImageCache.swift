@@ -41,7 +41,7 @@ public final class ImageCache: ImageCacheType {
 
     private lazy var decodedImageCache: NSCache<AnyObject, AnyObject> = {
         let decodedCache = NSCache<AnyObject, AnyObject>()
-        decodedCache.countLimit = config.memoryLimit
+        decodedCache.totalCostLimit = config.memoryLimit
         return decodedCache
     }()
 
