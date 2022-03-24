@@ -114,6 +114,6 @@ extension NewsFeedViewController {
 
 extension NewsFeedViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        articleViewModel?.onArticleTap(indexPath: indexPath)
+        articleViewModel?.showArticleDetail(indexPath: indexPath)
     }
 }

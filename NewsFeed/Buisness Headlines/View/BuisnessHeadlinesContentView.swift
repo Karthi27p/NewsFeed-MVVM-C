@@ -38,7 +38,7 @@ struct BuisnessHeadlinesContentView: View {
         NavigationView {
             
             VStack {
-                List(ArticleSearchResult(searchText: searchText, articleModel: buisnessArticle).result, id: \.self) { title in
+                List(ArticleSearchResult.getSearchResult(searchText: searchText, articleModel: buisnessArticle), id: \.self) { title in
                     VStack(alignment: .leading, spacing: 5, content: {
                         Text(title).listRowSeparator(.hidden)
                         Divider().padding(EdgeInsets(top: 15, leading: 0, bottom: 0, trailing: 0))
@@ -46,7 +46,6 @@ struct BuisnessHeadlinesContentView: View {
                 }
                 .searchable(text: $searchText).task {
                     await buisnessArticle.loadData(apiType: .buisnessHeadlines)
-                    
                 }.dynamicTypeSize(.xSmall...(.large))
                     .navigationTitle("Buisness Headlines")
                 NavigationLink(destination: BuisnessDetailContentView(buisnessViewModel: buisnessArticle), label: {
@@ -80,17 +79,7 @@ struct BuisnessHeadlinesContentView_Previews: PreviewProvider {
 
 
 struct ArticleSearchResult {
-    var searchText: String
-    var articleModel: HeadlinesViewModel
-    
-    var result: [String] {
-        get {
-            let res = getSearchResult()
-            return res
-        }
-    }
-    
-    func getSearchResult() -> [String] {
+   static func getSearchResult(searchText: String, articleModel: HeadlinesViewModel) -> [String] {
         if searchText.isEmpty {
             return articleModel.articles.map{
                 $0.title ?? ""

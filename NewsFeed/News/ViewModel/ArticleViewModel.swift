@@ -46,7 +46,7 @@ class ArticleViewModel {
         self.cancellable = cancelable
     }
     
-    func onArticleTap(indexPath: IndexPath) {
+    func showArticleDetail(indexPath: IndexPath) {
         coordinatorDelegate?.showArticleDetailScreen(articleUrl: arrArticles[indexPath.row].url ?? "")
     }
 }

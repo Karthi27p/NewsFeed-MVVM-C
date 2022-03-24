@@ -27,6 +27,7 @@ class TabBarCoordinator: BaseCoordinator {
         tabBarController.setViewControllers([topHeadlinesCoordinator.navigationController, newsFeedCoordinator.navigationController, buisnessHeadlinesCoordinator.navigationController], animated: false)
         self.addChildCoordinator(topHeadlinesCoordinator)
         self.addChildCoordinator(newsFeedCoordinator)
+        self.addChildCoordinator(buisnessHeadlinesCoordinator)
         tabBarController.setTitle(tabBarItemTitles: [("Tech Headlines", "News"), ("News", "Tesla"), ("Buisness Headlines", "Buisness")])
         window.rootViewController = tabBarController
         window.makeKeyAndVisible()
