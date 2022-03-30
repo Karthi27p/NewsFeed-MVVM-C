@@ -32,6 +32,7 @@
 		659373E927AA45A200A34457 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 659373E727AA45A200A34457 /* LaunchScreen.storyboard */; };
 		659373F427AA45A200A34457 /* NewsFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659373F327AA45A200A34457 /* NewsFeedTests.swift */; };
 		659373FF27AA45A200A34457 /* NewsFeedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659373FE27AA45A200A34457 /* NewsFeedUITests.swift */; };
+		659CD46C27F1DB0300504026 /* CameraHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659CD46B27F1DB0300504026 /* CameraHandler.swift */; };
 		65B4A43727B82BA50018AD45 /* TopHeadlinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4A43627B82BA50018AD45 /* TopHeadlinesViewController.swift */; };
 		65BC3F8727B3EA8B004F9C82 /* NewsArticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BC3F8627B3EA8B004F9C82 /* NewsArticles.swift */; };
 		65C9FCE127B231A8002769F8 /* NewsFeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C9FCE027B231A8002769F8 /* NewsFeedCoordinator.swift */; };
@@ -111,6 +112,7 @@
 		659373FA27AA45A200A34457 /* NewsFeedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsFeedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		659373FE27AA45A200A34457 /* NewsFeedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedUITests.swift; sourceTree = "<group>"; };
 		6593740027AA45A200A34457 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		659CD46B27F1DB0300504026 /* CameraHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHandler.swift; sourceTree = "<group>"; };
 		65B4A43627B82BA50018AD45 /* TopHeadlinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeadlinesViewController.swift; sourceTree = "<group>"; };
 		65BC3F8627B3EA8B004F9C82 /* NewsArticles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsArticles.swift; sourceTree = "<group>"; };
 		65C9FCE027B231A8002769F8 /* NewsFeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCoordinator.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 		659373DB27AA459F00A34457 /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
+				659CD46A27F1DAEC00504026 /* Camera & Photo Libraray */,
 				6565D72827E1174D0047E843 /* Buisness Headlines */,
 				65F7F9A827BAD10A0042136D /* Tab Bar */,
 				65B4A43527B82B870018AD45 /* Top Headlines */,
@@ -280,6 +283,14 @@
 				6593740027AA45A200A34457 /* Info.plist */,
 			);
 			path = NewsFeedUITests;
+			sourceTree = "<group>";
+		};
+		659CD46A27F1DAEC00504026 /* Camera & Photo Libraray */ = {
+			isa = PBXGroup;
+			children = (
+				659CD46B27F1DB0300504026 /* CameraHandler.swift */,
+			);
+			path = "Camera & Photo Libraray";
 			sourceTree = "<group>";
 		};
 		65B4A43527B82B870018AD45 /* Top Headlines */ = {
@@ -511,6 +522,7 @@
 				6565D71F27E10CF70047E843 /* TopHeadlinesContentView.swift in Sources */,
 				6512CEB227BB150700AE331B /* ArticleDetailViewController.swift in Sources */,
 				65B4A43727B82BA50018AD45 /* TopHeadlinesViewController.swift in Sources */,
+				659CD46C27F1DB0300504026 /* CameraHandler.swift in Sources */,
 				65F7F99C27BA48C80042136D /* ImageLoader.swift in Sources */,
 				65F7F9A627BACD950042136D /* TopHeadlinesCoordinator.swift in Sources */,
 				65BC3F8727B3EA8B004F9C82 /* NewsArticles.swift in Sources */,

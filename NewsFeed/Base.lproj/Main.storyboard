@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -37,11 +36,10 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GRi-8g-Ijx" secondAttribute="trailing" id="Aoa-Az-RDH"/>
                             <constraint firstItem="GRi-8g-Ijx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KjX-yi-l0O"/>
+                            <constraint firstItem="GRi-8g-Ijx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LEB-8H-APd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GRi-8g-Ijx" secondAttribute="bottom" id="S0T-fe-bDP"/>
-                            <constraint firstItem="GRi-8g-Ijx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="za5-Hu-28e"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0b6-Ak-ozj"/>
                     <connections>
                         <outlet property="collectionView" destination="GRi-8g-Ijx" id="slG-H7-6WD"/>
                     </connections>
@@ -91,7 +89,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8C3-ux-9cL" firstAttribute="leading" secondItem="K8a-a5-iSg" secondAttribute="leading" id="5D8-v6-x8b"/>
-                            <constraint firstItem="8C3-ux-9cL" firstAttribute="top" secondItem="K8a-a5-iSg" secondAttribute="top" id="hRz-bb-hQy"/>
+                            <constraint firstItem="8C3-ux-9cL" firstAttribute="top" secondItem="K8a-a5-iSg" secondAttribute="top" id="Dce-zm-Ebf"/>
                             <constraint firstItem="8C3-ux-9cL" firstAttribute="bottom" secondItem="K8a-a5-iSg" secondAttribute="bottom" id="sHJ-Dt-fZG"/>
                             <constraint firstItem="8C3-ux-9cL" firstAttribute="trailing" secondItem="K8a-a5-iSg" secondAttribute="trailing" id="yuz-nX-KJT"/>
                         </constraints>
@@ -115,6 +113,8 @@
                         <viewLayoutGuide key="safeArea" id="QrF-3o-Cjc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KLU-uv-Gww" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import AVKit
 
 class NewsFeedViewController: UIViewController {
     
@@ -31,6 +32,8 @@ class NewsFeedViewController: UIViewController {
     //MARK: Initial Setup
     private func initialSetup() {
         self.navigationItem.title = "Tesla News"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "play"), style: .plain, target: self, action: #selector(videoPlayButtonPressed))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "camera"), style: .plain, target: self, action: #selector(cameraButtonPressed))
         collectionView.register(UINib(nibName: kNewsCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: kNewsCollectionViewCell)
         collectionView.collectionViewLayout = createNestedLayout() //createTwoItemsWithequalWidthLayout()
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -41,6 +44,27 @@ class NewsFeedViewController: UIViewController {
         }
         self.cancellable = cancellable
     }
+    
+     @objc func videoPlayButtonPressed() {
+        guard let url = URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4") else {
+            return
+        }
+        let player = AVPlayer(url: url)
+        let playerVC = AVPlayerViewController()
+        playerVC.player =  player
+        self.present(playerVC, animated: true, completion: {
+            player.play()
+        })
+    }
+    
+    @objc func cameraButtonPressed() {
+        CameraHandler.shared.showAlert(currentVC: self)
+        CameraHandler.shared.completion = { (image) in
+             print("Received Image \(image)")
+        }
+    }
+    
+    
 }
 
 //MARK: Datasource setup
@@ -114,6 +138,9 @@ extension NewsFeedViewController {
 
 extension NewsFeedViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        articleViewModel?.showArticleDetail(indexPath: indexPath)
+        guard let cell = collectionView.cellForItem(at: indexPath) as? NewsCollectionViewCell else {
+            return
+        }
+        articleViewModel?.showArticleDetail(indexPath: indexPath, image: cell.articleImageView.image!)
     }
 }

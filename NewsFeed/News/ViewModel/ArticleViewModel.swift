@@ -10,7 +10,7 @@ import Combine
 import UIKit
 
 protocol NewsCoordniatorDelegate: AnyObject {
-    func showArticleDetailScreen(articleUrl: String)
+    func showArticleDetailScreen(article: ArticleItem, image: UIImage)
 }
 
 struct ArticleItem: Hashable {
@@ -46,7 +46,7 @@ class ArticleViewModel {
         self.cancellable = cancelable
     }
     
-    func showArticleDetail(indexPath: IndexPath) {
-        coordinatorDelegate?.showArticleDetailScreen(articleUrl: arrArticles[indexPath.row].url ?? "")
+    func showArticleDetail(indexPath: IndexPath, image: UIImage) {
+        coordinatorDelegate?.showArticleDetailScreen(article: arrArticles[indexPath.row], image: image)
     }
 }

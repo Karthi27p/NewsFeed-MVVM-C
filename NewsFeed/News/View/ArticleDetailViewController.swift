@@ -13,6 +13,7 @@ class ArticleDetailViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var progressView: UIProgressView!
     var articleUrl: String = ""
+    var itemsToShare: [Any]?
     
     override func loadView() {
         super.loadView()
@@ -22,6 +23,7 @@ class ArticleDetailViewController: UIViewController, WKNavigationDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage.init(systemName: "arrowshape.turn.up.forward"), style: .plain, target: self, action: #selector(shareButtonPressed))
         loadWebView(articleUrl: articleUrl)
         // Do any additional setup after loading the view.
     }
@@ -41,14 +43,25 @@ class ArticleDetailViewController: UIViewController, WKNavigationDelegate {
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func shareButtonPressed() {
+        if let itemsToShare = itemsToShare {
+            let activityController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+            self.present(activityController, animated: true, completion: nil)
+        }
     }
-    */
+    
+}
 
+extension ArticleDetailViewController: UIActivityItemSource {
+    func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
+        "Placeholder"
+    }
+    
+    func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
+        itemsToShare?[0]
+    }
+    
+    func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
+        "Mail Subject"
+    }
 }

@@ -34,9 +34,10 @@ class NewsFeedCoordinator: BaseCoordinator {
 }
 
 extension NewsFeedCoordinator: NewsCoordniatorDelegate {
-    func showArticleDetailScreen(articleUrl: String) {
+    func showArticleDetailScreen(article: ArticleItem, image: UIImage) {
         if let articleDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ArticleDetailViewController") as? ArticleDetailViewController {
-            articleDetailViewController.articleUrl = articleUrl
+            articleDetailViewController.articleUrl = article.url ?? ""
+            articleDetailViewController.itemsToShare = [article.title ?? "", URL(string: article.url ?? "")!, image]
             navigationController.pushViewController(articleDetailViewController, animated: true)
         }
     }
