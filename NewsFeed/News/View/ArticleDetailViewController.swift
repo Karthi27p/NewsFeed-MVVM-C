@@ -13,7 +13,7 @@ class ArticleDetailViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var progressView: UIProgressView!
     var articleUrl: String = ""
-    var itemsToShare: [Any]?
+    var itemsToShare: [Any] = []
     
     override func loadView() {
         super.loadView()
@@ -44,24 +44,22 @@ class ArticleDetailViewController: UIViewController, WKNavigationDelegate {
     }
 
     @objc func shareButtonPressed() {
-        if let itemsToShare = itemsToShare {
             let activityController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
             self.present(activityController, animated: true, completion: nil)
-        }
     }
     
 }
 
 extension ArticleDetailViewController: UIActivityItemSource {
     func activityViewControllerPlaceholderItem(_ activityViewController: UIActivityViewController) -> Any {
-        "Placeholder"
+        itemsToShare
     }
     
     func activityViewController(_ activityViewController: UIActivityViewController, itemForActivityType activityType: UIActivity.ActivityType?) -> Any? {
-        itemsToShare?[0]
+        itemsToShare
     }
     
     func activityViewController(_ activityViewController: UIActivityViewController, subjectForActivityType activityType: UIActivity.ActivityType?) -> String {
-        "Mail Subject"
+        "News Feed: \(String(describing: itemsToShare[0]))"
     }
 }
